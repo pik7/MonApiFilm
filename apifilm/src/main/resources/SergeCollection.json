@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "335f32a2-18da-4311-a446-de2b4382045c",
+		"name": "SergeCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21824512"
+	},
+	"item": [
+		{
+			"name": "Folder Post",
+			"item": [
+				{
+					"name": "Inserer un film",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"titre\":\"Star Wars: The Empire Strikes Back\",\r\n   \"description\":\"Darth Vader is adamant about turning Luke Skywalker to the dark side.\",\r\n   \"acteurs\":[\r\n      {\r\n         \"nom\":\"Ford\",\r\n         \"prenom\":\"Harrison\"\r\n      },\r\n      {\r\n         \"nom\":\"Hamill\",\r\n         \"prenom\":\"Mark\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/film",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"film"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Folder Get",
+			"item": [
+				{
+					"name": "afficher filme 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/api/film/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"film",
+								"1"
+							]
+						},
+						"description": "Requete GET pour obtenir un film par ID dans la base de données en mémoire (H2)."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"//assert",
+					"pm.test('status code is 200', function(){",
+					"    pm.response.to.have.status(200)",
+					"})",
+					"",
+					"",
+					""
+				]
+			}
+		}
+	]
+}
